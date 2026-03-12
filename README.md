@@ -101,3 +101,7 @@ Reason → Avoid IP conflicts and enable VPC-native networking for enterprise-sc
 If you want, I can make a full picture showing nodes, pods, services, subnets, secondary IPs, and NAT flow in one diagram — super helpful for understanding the network visually.
 
 Do you want me to draw that?
+
+<img width="1856" height="1344" alt="image" src="https://github.com/user-attachments/assets/8a931be8-4e3c-4875-b829-2fdc59c3ac33" />
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/690b45ac-e013-4161-a343-9e42ba7cbb7b" />
