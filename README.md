@@ -682,3 +682,186 @@ DNAT
 PAT
 
 They come up a lot in Kubernetes, AWS, and GCP networking.
+
+
+In networking, reliable means:
+
+👉 Data is guaranteed to reach the destination correctly and in order.
+
+If something goes wrong (packet lost, corrupted, or out of order), the protocol detects the problem and fixes it automatically.
+
+This concept is mainly associated with Transmission Control Protocol.
+
+1. What Reliable Communication Means
+
+Reliable communication ensures three things:
+
+1️⃣ Delivery Guarantee
+Data will reach the receiver.
+
+2️⃣ Correct Order
+Packets arrive in the same order they were sent.
+
+3️⃣ Error Checking & Recovery
+If data is lost or damaged, it is sent again.
+
+2. Simple Real-Life Example
+
+Imagine sending 5 packets of data:
+
+Packet1
+Packet2
+Packet3
+Packet4
+Packet5
+
+A reliable protocol ensures the receiver gets:
+
+Packet1
+Packet2
+Packet3
+Packet4
+Packet5
+
+If Packet3 is lost, the system detects it and requests it again.
+
+3. How Reliability Works (Step by Step)
+Step 1 — Sender sends data
+Sender → Packet1
+Sender → Packet2
+Sender → Packet3
+Step 2 — Receiver confirms
+
+Receiver sends ACK (Acknowledgement).
+
+Receiver → ACK Packet1
+Receiver → ACK Packet2
+Step 3 — Missing packet detected
+
+If Packet3 is missing:
+
+Receiver → Request resend Packet3
+
+Sender resends it.
+
+4. Example Protocols
+Reliable Protocol
+
+Transmission Control Protocol
+
+Used for:
+
+Service	Example
+Web browsing	HTTP/HTTPS
+SSH login	Remote servers
+Database connections	MySQL
+Unreliable Protocol
+
+User Datagram Protocol
+
+UDP does not guarantee delivery.
+
+Packets may:
+
+arrive late
+
+arrive out of order
+
+be lost
+
+But it is much faster.
+
+5. Visual Comparison
+TCP (Reliable)
+Sender
+  │
+  │ Packet
+  ▼
+Receiver
+  │
+  │ ACK
+  ▼
+Sender
+
+Lost packets are resent.
+
+UDP (Not Reliable)
+Sender
+  │
+  │ Packet
+  ▼
+Receiver
+
+If a packet is lost:
+
+❌ No resend
+6. Example
+File Download (Reliable)
+
+Downloading a file uses TCP.
+
+If 1 MB of data is missing, the system downloads it again.
+
+Video Streaming (Not Reliable)
+
+Streaming video uses UDP.
+
+If one packet is lost:
+
+You might see a small glitch
+
+But video keeps playing without delay.
+
+7. Simple Definition
+
+Reliable communication = guaranteed, ordered, and error-checked data delivery.
+
+Unreliable communication = fast but no guarantee of delivery.
+
+✅ In one sentence
+
+Reliable means:
+
+The network protocol makes sure the data arrives correctly, completely, and in the right order.
+
+1. What is ICMP?
+
+ICMP stands for Internet Control Message Protocol.
+
+Internet Control Message Protocol
+
+It is a network protocol used to check connectivity and report network errors.
+
+It does not transfer application data like HTTP or SSH.
+
+Instead, it helps devices communicate network status.
+
+2. What ICMP Does
+
+ICMP is mainly used for:
+
+1️⃣ Checking if a server is reachable
+
+Example command:
+
+ping google.com
+
+The ping command sends ICMP echo requests.
+
+If the server responds, you get:
+
+Reply from 142.250.183.206
+
+Meaning:
+
+✅ The server is reachable.
+
+2️⃣ Network troubleshooting
+
+ICMP helps identify:
+
+unreachable hosts
+
+network errors
+
+routing problems
