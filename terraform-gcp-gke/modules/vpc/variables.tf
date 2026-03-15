@@ -1,6 +1,29 @@
-variable "vpc_name" {}
-variable "subnet_name" {}
-varibale "subnet_cidr" {}
-variable "region" {}
-varibale "pods_cidr" {}
-varibale "services_cidr" {}
+variable "vpc_name" {
+  description = "Name of the VPC"
+  type        = string
+}
+
+variable "subnet_name" {
+  description = "Subnet name"
+  type        = string
+}
+
+variable "subnet_cidr" {
+  description = "CIDR for subnet"
+  type        = string
+}
+
+variable "region" {
+  description = "GCP region"
+  type        = string
+}
+
+variable "pods_cidr" {
+  description = "CIDR range for pods"
+  type        = string
+}
+
+variable "services_cidr" {
+  description = "CIDR range for services"
+  type        = string
+}
