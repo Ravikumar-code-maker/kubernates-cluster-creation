@@ -21,7 +21,7 @@ resource "google_container_node_pool" "primary_nodes" {
     machine_type     = "e2-medium"
     service_account  = var.service_account
 
-    oath_scopes = [
+    oauth_scopes = [
        "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
