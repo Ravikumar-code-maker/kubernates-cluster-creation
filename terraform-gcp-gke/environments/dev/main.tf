@@ -10,7 +10,7 @@ module "vpc" {
 }
 
 module "nat" {
-  source      = "../../mdoules/nat"
+  source      = "../../modules/nat"
   router_name = "dev-router"
   nat_name    = "dev-nat"
   network     = module.vpc.vpc_name
@@ -18,7 +18,7 @@ module "nat" {
 }
 
 module "iam" {
-  source               = "../../mdoules/iam"
+  source               = "../../modules/iam"
 
   project_id           = var.project_id
   service_account_name = "gke-service-account"
