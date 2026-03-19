@@ -19,7 +19,6 @@ module "nat" {
 
 module "iam" {
   source               = "../../modules/iam"
-
   project_id           = var.project_id
   service_account_name = "gke-service-account"
 }
