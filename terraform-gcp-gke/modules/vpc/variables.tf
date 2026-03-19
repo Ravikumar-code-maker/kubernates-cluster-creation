@@ -23,7 +23,7 @@ variable "pods_cidr" {
   type        = string
 }
 
-variable "services_cidr" {
+variable "service_cidr" {
   description = "CIDR range for services"
   type        = string
 }
