@@ -1,5 +1,5 @@
 resource "google_container_cluster" "gke" {
-  name     = var.clsuter_name
+  name     = var.cluster_name
   location = var.region
 
   netwrok   = var.network
