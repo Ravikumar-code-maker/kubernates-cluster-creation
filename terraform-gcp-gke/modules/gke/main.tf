@@ -3,6 +3,13 @@ resource "google_container_cluster" "gke" {
   project  = var.project_id   # ✅ ADD THIS
 
   location = var.region
+
+   ✅ ADD THIS (or modify if already present)
+  node_locations = [
+    "us-central1-a",
+    "us-central1-b"
+  ]
+
  
   deletion_protection = false
 

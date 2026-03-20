@@ -7,6 +7,10 @@ variable "project_id" {
   type = string
 }
 
+variable "node_locations" {
+  type = list(string)
+}
+
 variable "region" {
   type = string
 }
