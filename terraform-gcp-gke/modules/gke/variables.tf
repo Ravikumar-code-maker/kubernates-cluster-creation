@@ -3,6 +3,10 @@ variable "cluster_name" {
   description = "The name of the GKE cluster"  
 }
 
+variable "project_id" {
+  type = string
+}
+
 variable "region" {
   type = string
 }

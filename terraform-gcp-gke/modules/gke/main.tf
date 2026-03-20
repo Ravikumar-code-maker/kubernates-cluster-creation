@@ -1,8 +1,12 @@
 resource "google_container_cluster" "gke" {
   name     = var.cluster_name
-  location = var.region
+  project  = var.project_id   # ✅ ADD THIS
 
-  netwrok   = var.network
+  location = var.region
+ 
+  deletion_protection = false
+
+  network   = var.network
   subnetwork = var.subnetwork
 
   remove_default_node_pool = true
@@ -13,6 +17,7 @@ resource "google_container_cluster" "gke" {
 
 resource "google_container_node_pool" "primary_nodes" {
   name       = "primary-node-pool"
+  project    = var.project_id   # ✅ ADD THIS
   cluster    = google_container_cluster.gke.name
   location   = var.region
   node_count = var.node_count
