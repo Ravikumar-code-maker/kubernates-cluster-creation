@@ -28,6 +28,7 @@ module "gke"{
 
   cluster_name    = "dev-gke"
   project_id      = "project-27aed37f-8011-4e5d-841"  
+  node_locations  = ["us-central1-a", "us-central1-b", "us-central1-c"]
   region          = "us-central1-a"   # ✅ change this
   network         = module.vpc.vpc_name
   subnetwork      = module.vpc.subnet_name
