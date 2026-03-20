@@ -4,6 +4,11 @@ resource "google_container_cluster" "gke" {
 
   location = var.region
 
+   node_locations = [
+    "us-central1-a",
+    "us-central1-b"
+  ]
+
   network   = var.network
   subnetwork = var.subnetwork
 
